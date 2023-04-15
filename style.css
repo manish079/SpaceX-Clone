@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
+
+/* variables */
+:root {
+  --primary: #1e1e1e;
+  --dark: #121212;
+  --pure: #ffffff;
+  --gray: #1d1d1d;
+  --mild: #b9b8b8;
+}
+
+/* utilities */
+.container {
+  width: 1460px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 8px 30px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-primary {
+  color: var(--dark);
+  background: var(--pure);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--pure);
+  border-color: var(--pure);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--pure);
+  border-color: var(--pure);
+}
+
+.btn-secondary:hover {
+  background: var(--pure);
+  color: var(--dark);
+}
+a {
+  font-size: 1rem;
+  color: var(--pure);
+}
+
+/* resetting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--pure);
+  background: var(--primary);
+}
+
+/* ==================================== */
+
+header {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
+    url("./img/sunrise.jpg");
+  background-size: cover;
+}
+header nav {
+  padding: 20px 40px 20px 100px;
+  display: flex;
+  /* backdrop-filter: blur(30px); */
+  border: 1px solid var(--gray);
+  background: transparent;
+}
+.brand {
+  flex-grow: 1;
+}
+header nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1.26;
+}
+header nav .navbar a {
+  text-decoration: none;
+  margin-right: 30px;
+  position: relative;
+}
+header nav .navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--pure);
+  transition: width 0.3s ease-in-out;
+}
+header nav .navbar a:hover::after {
+  width: 70%;
+}
+header nav .navbar a.active:hover::after {
+  width: 70%;
+}
+
+/* search bar */
+.navbar .nav-search {
+  border-radius: 50px;
+  background-color: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+.navbar input[type="text"] {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+.nav-search img {
+  padding-right: 16px;
+}
+
+/* hero section */
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--gray);
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 90vh;
+}
+.social-icons div {
+  border: 2px solid var(--pure);
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  /* animation: anim 1s cubic-bezier(0.51, 0.92, 0.24, 1.15) forwards; */
+  opacity: 0;
+}
+@keyframes anim {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transition: translateX(0);
+    opacity: 1;
+  }
+}
+
+.header-main-hero {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+}
+
+.hero-text h1 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+.header-main-hero > div {
+  flex: 1; /* take both div same width*/
+}
+
+.hero-text {
+  padding: 0 70px 0 30px;
+}
+
+/* .header-main-hero .anim-img {
+  margin-right: 100px;
+} */
+.header-main-hero img {
+  width: 70vh;
+  transform: rotate(20deg); /*Bydefault we want to rotate img on right side */
+  animation: astronaut-anim 12s ease-in-out infinite alternate;
+}
+@keyframes astronaut-anim {
+  /*again comes in actual position*/
+  50% {
+    rotate: -30deg;
+    transform: translateY(100px);
+    scale: 0.8;
+  }
+}
+
+/* mission-section */
+.starlink-mission-section {
+  display: flex;
+  justify-content: space-around;
+  padding-block: 50px;
+  background-color: var(--dark);
+  align-items: center;
+}
+
+/* rocket-section */
+.rocket-section {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  grid-gap: 80px;
+  padding: 100px 0;
+}
+.box {
+  width: 70%;
+}
+.box h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+.box .underline {
+  margin-bottom: 38px;
+  position: relative;
+}
+
+.box .underline::before {
+  content: "";
+  display: block;
+  width: 38%;
+  left: 0;
+  border: 2px solid var(--pure);
+  bottom: -12px;
+  position: absolute;
+}
+.box h1::before {
+  width: 20% !important;
+}
+.box p {
+  line-height: 1.6;
+}
+.box h2 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.box button {
+  margin-top: 30px;
+}
+.left-box .dragon-box {
+  padding-top: 120px;
+}
+.left-box .composite-box {
+  margin-top: 60px;
+}
+.left-box .first-stage-box {
+  margin-top: 60px;
+}
+
+.rocket-capacity {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+}
+.rocket-capacity > div:first-child {
+  margin-right: 40px;
+}
+.rocket-capacity h4 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.rocket-capacity h6 {
+  font-size: 40px;
+  font-weight: 400;
+}
+.rocket-capacity h6 small {
+  font-size: 12px;
+}
