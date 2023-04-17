@@ -271,11 +271,6 @@ header nav .navbar a.active:hover::after {
   margin-top: 60px;
 }
 
-.rocket-capacity {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-}
 .rocket-capacity > div:first-child {
   margin-right: 40px;
 }
@@ -290,4 +285,50 @@ header nav .navbar a.active:hover::after {
 }
 .rocket-capacity h6 small {
   font-size: 12px;
+}
+.middle-rocket {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.right-box .payload {
+  padding-top: 130px;
+}
+.right-box .payload h2 {
+  padding-left: 100px;
+}
+.second-stage {
+  margin-top: 60px;
+}
+.right-box .rocket-capacity {
+  padding-top: 120px;
+}
+.right-box .single {
+  padding-top: 40px;
+}
+.right-box .engine {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.right-box .engine img {
+  width: 180px;
+}
+.right-box .marine {
+  padding-top: 100px;
+}
+.right-box .marine h2 {
+  font-size: 14px;
+  padding-left: 100px;
+  margin-bottom: 26px;
+}
+.rocket-capacity {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+}
+.footer-section {
+  background-color: var(--dark);
+  height: 400px;
 }
