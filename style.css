@@ -9,7 +9,7 @@
   --mild: #b9b8b8;
 }
 
-/* utilities */
+/* utilities class */
 .container {
   width: 1460px;
   max-width: 90%;
@@ -104,9 +104,7 @@ header nav .navbar a::after {
   background-color: var(--pure);
   transition: width 0.3s ease-in-out;
 }
-/* .navbar .nav-links .active a {
-  width: 70%;
-} */
+
 header nav .navbar a:hover::after {
   width: 70%;
 }
@@ -296,6 +294,7 @@ header nav .navbar .nav-links .active::after {
   justify-content: center;
   flex-direction: column;
 }
+
 .middle-rocket span {
   position: relative;
 }
@@ -316,38 +315,40 @@ header nav .navbar .nav-links .active::after {
 .middle-rocket span:nth-child(1)::after {
   bottom: 16px;
   left: 96%;
-  width: 120px;
+  /* width: 120px; */
 }
+
 .middle-rocket span:nth-child(2)::after {
   bottom: 62%;
   right: 100%;
-  width: 180px;
+  /* width: 180px; */
 }
 .middle-rocket span:nth-child(3)::before {
   bottom: 36%;
   left: 90%;
-  width: 160px;
+  /* width: 160px; */
 }
 .middle-rocket span:nth-child(3)::after {
   right: 90%;
   bottom: 64%;
-  width: 200px;
+  /* width: 200px; */
 }
-/* .middle-rocket span:nth-child(1)::after {
+.middle-rocket span.active:nth-child(1)::after {
   width: 120px;
 }
-.middle-rocket span:nth-child(2)::after {
+.middle-rocket span.active:nth-child(2)::after {
   width: 180px;
 }
-.middle-rocket span:nth-child(3)::after {
+.middle-rocket span.active:nth-child(3)::after {
   width: 200px;
 }
-.middle-rocket span:nth-child(3)::before {
+.middle-rocket span.active:nth-child(3)::before {
   width: 160px;
-} */
+}
 
-.middle-rocket span:nth-child(1) {
-  animation: rocket_anim 1s ease-in-out forwards infinite;
+/* rocket top-nozzle anim */
+.middle-rocket span.active:nth-child(1) {
+  animation: rocket_anim 1s ease-in-out forwards;
 }
 
 @keyframes rocket_anim {
@@ -467,3 +468,38 @@ footer .footer-section {
 .footer-section a:hover {
   color: var(--pure);
 }
+
+.bus-graphics {
+  position: sticky;
+  top: 60px;
+  margin-right: -75px;
+  float: right;
+}
+.bus-graphics img {
+  height: 350px;
+}
+
+/* small device */
+@media only screen and (max-width: 968px) {
+  header nav .navbar {
+    display: none;
+  }
+  .header-main-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-text h1 {
+    margin-top: 40px;
+  }
+}
+/* tablets */
+@media only screen and (max-width: 768px) {
+  .box {
+    width: 80%;
+  }
+  .box h1 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+/* Mobile */
